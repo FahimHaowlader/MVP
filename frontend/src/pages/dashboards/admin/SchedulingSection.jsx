@@ -23,7 +23,7 @@ const SchedulingSection = () => {
         e.preventDefault();
         try {
             const token = localStorage.getItem('token');
-            await axios.post('http://localhost:5001/api/routines',
+            await axios.post('https://mvp-gilt-iota.vercel.app/api/routines',
                 { className, section, day, timeSlot, subject, teacherId },
                 { headers: { Authorization: `Bearer ${token}` } }
             );
@@ -38,7 +38,7 @@ const SchedulingSection = () => {
         e.preventDefault();
         try {
             const token = localStorage.getItem('token');
-            await axios.post('http://localhost:5001/api/events',
+            await axios.post('https://mvp-gilt-iota.vercel.app/api/events',
                 { title: eventTitle, date: eventDate, type: 'Exam' },
                 { headers: { Authorization: `Bearer ${token}` } }
             );

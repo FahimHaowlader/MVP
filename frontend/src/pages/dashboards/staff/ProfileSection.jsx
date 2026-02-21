@@ -36,13 +36,13 @@ const ProfileSection = () => {
                 const token = localStorage.getItem('token');
 
                 // Fetch Events
-                const eventsRes = await axios.get('http://localhost:5001/api/events', {
+                const eventsRes = await axios.get('https://mvp-gilt-iota.vercel.app/api/events', {
                     headers: { Authorization: `Bearer ${token}` }
                 });
                 setEvents(eventsRes.data);
 
                 // Fetch Notices
-                const noticesRes = await axios.get('http://localhost:5001/api/notices', {
+                const noticesRes = await axios.get('https://mvp-gilt-iota.vercel.app/api/notices', {
                     headers: { Authorization: `Bearer ${token}` }
                 });
                 setNotices(noticesRes.data);

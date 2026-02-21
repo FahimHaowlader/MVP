@@ -17,7 +17,7 @@ export const AuthProvider = ({ children }) => {
                             Authorization: `Bearer ${token}`
                         }
                     };
-                    const { data } = await axios.get('http://localhost:5001/api/auth/me', config);
+                    const { data } = await axios.get('https://mvp-gilt-iota.vercel.app/api/auth/me', config);
                     setUser({ ...data, token });
                 } catch (error) {
                     localStorage.removeItem('token');
@@ -30,13 +30,13 @@ export const AuthProvider = ({ children }) => {
     }, []);
 
     const login = async (email, password) => {
-        const { data } = await axios.post('http://localhost:5001/api/auth/login', { email, password });
+        const { data } = await axios.post('https://mvp-gilt-iota.vercel.app/api/auth/login', { email, password });
         localStorage.setItem('token', data.token);
         setUser(data);
     };
 
     const register = async (userData) => { // UserData includes role
-        const { data } = await axios.post('http://localhost:5001/api/auth/register', userData);
+        const { data } = await axios.post('https://mvp-gilt-iota.vercel.app/api/auth/register', userData);
         localStorage.setItem('token', data.token);
         setUser(data);
     };

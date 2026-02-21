@@ -19,7 +19,7 @@ const LogisticsSection = () => {
                     const token = localStorage.getItem('token');
                     // Re-using overview for now as it returns pending fees. 
                     // In real app, create specific endpoints for full history.
-                    const res = await axios.get(`http://localhost:5001/api/parent/child/${selectedChild._id}/overview`, {
+                    const res = await axios.get(`https://mvp-gilt-iota.vercel.app/api/parent/child/${selectedChild._id}/overview`, {
                         headers: { Authorization: `Bearer ${token}` }
                     });
                     setFees(res.data.pendingFees || []);

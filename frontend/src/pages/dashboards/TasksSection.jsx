@@ -11,7 +11,7 @@ const TasksSection = () => {
                 const token = localStorage.getItem('token');
                 // Hardcoded class for MVP or fetch from profile
                 const className = 'Class 10';
-                const res = await axios.get(`http://localhost:5001/api/assignments/${className}`, {
+                const res = await axios.get(`https://mvp-gilt-iota.vercel.app/api/assignments/${className}`, {
                     headers: { Authorization: `Bearer ${token}` }
                 });
                 setAssignments(res.data);

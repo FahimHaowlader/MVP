@@ -40,7 +40,7 @@ const ClassManagementSection = () => {
         e.preventDefault();
         try {
             const token = localStorage.getItem('token');
-            await axios.post('http://localhost:5001/api/attendance',
+            await axios.post('https://mvp-gilt-iota.vercel.app/api/attendance',
                 { studentId, status: attendanceStatus, subject: selectedSubject.name, className: selectedSubject.grade },
                 { headers: { Authorization: `Bearer ${token}` } }
             );
@@ -66,7 +66,7 @@ const ClassManagementSection = () => {
                 ...(type === 'Assignment' ? { dueDate } : { type })
             };
 
-            await axios.post(`http://localhost:5001/api/` + endpoint, payload, {
+            await axios.post(`https://mvp-gilt-iota.vercel.app/api/` + endpoint, payload, {
                 headers: { Authorization: `Bearer ${token}` }
             });
 

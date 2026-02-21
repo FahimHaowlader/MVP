@@ -11,7 +11,7 @@ const DirectorySection = () => {
             setLoading(true);
             try {
                 const token = localStorage.getItem('token');
-                let url = 'http://localhost:5001/api/users';
+                let url = 'https://mvp-gilt-iota.vercel.app/api/users';
                 if (roleFilter !== 'All') {
                     url += `?role=${roleFilter}`;
                 }

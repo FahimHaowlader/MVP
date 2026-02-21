@@ -24,7 +24,7 @@ const RoutineSection = () => {
         const fetchRoutine = async () => {
             try {
                 const token = localStorage.getItem('token');
-                const res = await axios.get(`http://localhost:5001/api/routines/teacher/${user._id}`, {
+                const res = await axios.get(`https://mvp-gilt-iota.vercel.app/api/routines/teacher/${user._id}`, {
                     headers: { Authorization: `Bearer ${token}` }
                 });
                 setRoutines(res.data);

@@ -14,18 +14,18 @@ const AcademicSection = () => {
                 const config = { headers: { Authorization: `Bearer ${token}` } };
 
                 // Fetch Results
-                const resultsRes = await axios.get('http://localhost:5001/api/results/my', config);
+                const resultsRes = await axios.get('https://mvp-gilt-iota.vercel.app/api/results/my', config);
                 setResults(resultsRes.data);
 
                 // Fetch Routine (assuming user has className 'Class 10', section 'A' - this should come from user profile ideally)
                 // For MVP simplify or fetch profile first. 
                 // Let's assume we fetch profile to get class/section
-                const profileRes = await axios.get('http://localhost:5001/api/student/profile', config);
+                const profileRes = await axios.get('https://mvp-gilt-iota.vercel.app/api/student/profile', config);
                 // NOT IMPLEMENTED FULL PROFILE YET, MOCKING FOR SAFETY OR USING DEFAULTS IF FAIL
                 // In real app, we need profile.className
 
                 // Fetch Syllabus
-                const syllabusRes = await axios.get(`http://localhost:5001/api/syllabus/student/all`, config); // Need this endpoint
+                const syllabusRes = await axios.get(`https://mvp-gilt-iota.vercel.app/api/syllabus/student/all`, config); // Need this endpoint
                 setSyllabus(syllabusRes.data);
 
                 setLoading(false);

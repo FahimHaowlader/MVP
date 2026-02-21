@@ -25,7 +25,7 @@ const GradingSection = () => {
         setLoading(true);
         try {
             const token = localStorage.getItem('token');
-            const res = await axios.get(`http://localhost:5001/api/users/students?className=${selectedClass}&section=${selectedSection}`, {
+            const res = await axios.get(`https://mvp-gilt-iota.vercel.app/api/users/students?className=${selectedClass}&section=${selectedSection}`, {
                 headers: { Authorization: `Bearer ${token}` }
             });
 
@@ -95,7 +95,7 @@ const GradingSection = () => {
                 return;
             }
 
-            await axios.post('http://localhost:5001/api/results/bulk',
+            await axios.post('https://mvp-gilt-iota.vercel.app/api/results/bulk',
                 { results: resultsData },
                 { headers: { Authorization: `Bearer ${token}` } }
             );

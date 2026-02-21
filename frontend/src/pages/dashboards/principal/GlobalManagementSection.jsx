@@ -28,7 +28,7 @@ const GlobalManagementSection = () => {
         e.preventDefault();
         try {
             const token = localStorage.getItem('token');
-            await axios.post('http://localhost:5001/api/events',
+            await axios.post('https://mvp-gilt-iota.vercel.app/api/events',
                 { title: eventTitle, date: eventDate, type: eventType },
                 { headers: { Authorization: `Bearer ${token}` } }
             );
@@ -43,7 +43,7 @@ const GlobalManagementSection = () => {
         e.preventDefault();
         try {
             const token = localStorage.getItem('token');
-            await axios.post('http://localhost:5001/api/routines',
+            await axios.post('https://mvp-gilt-iota.vercel.app/api/routines',
                 { className, section, day, timeSlot, subject, teacherId },
                 { headers: { Authorization: `Bearer ${token}` } }
             );
@@ -58,7 +58,7 @@ const GlobalManagementSection = () => {
         e.preventDefault();
         try {
             const token = localStorage.getItem('token');
-            await axios.post('http://localhost:5001/api/admin/library',
+            await axios.post('https://mvp-gilt-iota.vercel.app/api/admin/library',
                 { title: bookTitle, author: bookAuthor, isbn: bookIsbn, totalCopies: copies },
                 { headers: { Authorization: `Bearer ${token}` } }
             );

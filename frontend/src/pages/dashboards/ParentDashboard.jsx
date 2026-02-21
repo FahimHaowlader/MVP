@@ -15,7 +15,7 @@ const ParentDashboard = () => {
         const fetchChildren = async () => {
             try {
                 const token = localStorage.getItem('token');
-                const res = await axios.get('http://localhost:5001/api/parent/children', {
+                const res = await axios.get('https://mvp-gilt-iota.vercel.app/api/parent/children', {
                     headers: { Authorization: `Bearer ${token}` }
                 });
                 setChildren(res.data);

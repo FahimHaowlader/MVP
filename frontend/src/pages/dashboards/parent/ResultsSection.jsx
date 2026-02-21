@@ -16,7 +16,7 @@ const ParentResultsSection = () => {
                 const token = localStorage.getItem('token');
                 // Use a generic result search or specific student result endpoint
                 // Since results/my is for self, we use a general one that handles childIds (already supported by backend)
-                const res = await axios.get(`http://localhost:5001/api/parent/child/${selectedChild._id}/overview`, {
+                const res = await axios.get(`https://mvp-gilt-iota.vercel.app/api/parent/child/${selectedChild._id}/overview`, {
                     headers: { Authorization: `Bearer ${token}` }
                 });
                 setResults(res.data.recentResults || []);

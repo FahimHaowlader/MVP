@@ -12,7 +12,7 @@ const StudentFinanceSection = () => {
         const fetchFees = async () => {
             try {
                 const token = localStorage.getItem('token');
-                const res = await axios.get(`http://localhost:5001/api/admin/fees/${user._id}`, {
+                const res = await axios.get(`https://mvp-gilt-iota.vercel.app/api/admin/fees/${user._id}`, {
                     headers: { Authorization: `Bearer ${token}` }
                 });
                 setFees(res.data);

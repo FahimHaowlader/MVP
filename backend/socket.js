@@ -5,7 +5,7 @@ let io;
 const initSocket = (server) => {
     io = socketIo(server, {
         cors: {
-            origin: "http://localhost:5173", // Frontend URL
+            origin: ["https://mvp-35z7.vercel.app", "http://localhost:5173"], // Frontend URL
             methods: ["GET", "POST"]
         }
     });

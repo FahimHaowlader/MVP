@@ -24,7 +24,7 @@ const CommunicationSection = () => {
     const fetchNotices = async () => {
         try {
             const token = localStorage.getItem('token');
-            const res = await axios.get('http://localhost:5001/api/notices', {
+            const res = await axios.get('https://mvp-gilt-iota.vercel.app/api/notices', {
                 headers: { Authorization: `Bearer ${token}` }
             });
             setNotices(res.data);
@@ -38,7 +38,7 @@ const CommunicationSection = () => {
         e.preventDefault();
         try {
             const token = localStorage.getItem('token');
-            await axios.post('http://localhost:5001/api/notices',
+            await axios.post('https://mvp-gilt-iota.vercel.app/api/notices',
                 form,
                 { headers: { Authorization: `Bearer ${token}` } }
             );

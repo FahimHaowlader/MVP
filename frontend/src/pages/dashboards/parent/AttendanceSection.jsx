@@ -14,7 +14,7 @@ const ParentAttendanceSection = () => {
             setLoading(true);
             try {
                 const token = localStorage.getItem('token');
-                const res = await axios.get(`http://localhost:5001/api/attendance/${selectedChild._id}`, {
+                const res = await axios.get(`https://mvp-gilt-iota.vercel.app/api/attendance/${selectedChild._id}`, {
                     headers: { Authorization: `Bearer ${token}` }
                 });
                 setAttendanceData(res.data);

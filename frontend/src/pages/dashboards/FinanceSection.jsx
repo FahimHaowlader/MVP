@@ -15,7 +15,7 @@ const FinanceSection = () => {
                 // Re-using dashboard endpoint for simplicity in MVP or separate if needed
                 // For now, let's hit dashboard to get aggregated data or specific if available
                 // Actually, let's create a specific fetch or just use dashboard aggregation
-                const res = await axios.get('http://localhost:5001/api/student/dashboard', config);
+                const res = await axios.get('https://mvp-gilt-iota.vercel.app/api/student/dashboard', config);
                 setFees(res.data.pendingFees);
                 setEvents(res.data.upcomingEvents);
             } catch (err) {

@@ -13,7 +13,7 @@ const StudentResultsSection = () => {
         const fetchResults = async () => {
             try {
                 const token = localStorage.getItem('token');
-                const res = await axios.get('http://localhost:5001/api/results/my', {
+                const res = await axios.get('https://mvp-gilt-iota.vercel.app/api/results/my', {
                     headers: { Authorization: `Bearer ${token}` }
                 });
                 setResults(res.data);

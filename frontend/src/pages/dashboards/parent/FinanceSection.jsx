@@ -15,7 +15,7 @@ const ParentFinanceSection = () => {
             try {
                 const token = localStorage.getItem('token');
                 // Use existing generic fee retrieval logic if available or overview
-                const res = await axios.get(`http://localhost:5001/api/admin/fees/${selectedChild._id}`, {
+                const res = await axios.get(`https://mvp-gilt-iota.vercel.app/api/admin/fees/${selectedChild._id}`, {
                     headers: { Authorization: `Bearer ${token}` }
                 });
                 setFees(res.data || []);

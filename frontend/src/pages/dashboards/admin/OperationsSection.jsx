@@ -25,7 +25,7 @@ const OperationsSection = () => {
         setLoading(true);
         try {
             const token = localStorage.getItem('token');
-            await axios.post('http://localhost:5001/api/users',
+            await axios.post('https://mvp-gilt-iota.vercel.app/api/users',
                 { name, email, password, role },
                 { headers: { Authorization: `Bearer ${token}` } }
             );
@@ -44,7 +44,7 @@ const OperationsSection = () => {
         setLoading(true);
         try {
             const token = localStorage.getItem('token');
-            await axios.post('http://localhost:5001/api/admin/fees',
+            await axios.post('https://mvp-gilt-iota.vercel.app/api/admin/fees',
                 { student: studentId, amount, dueDate, type: feeType, description },
                 { headers: { Authorization: `Bearer ${token}` } }
             );

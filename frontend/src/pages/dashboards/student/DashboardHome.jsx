@@ -17,9 +17,9 @@ const StudentDashboardHome = () => {
                 const config = { headers: { Authorization: `Bearer ${token}` } };
 
                 const [dashRes, attRes, routineRes] = await Promise.all([
-                    axios.get('http://localhost:5001/api/student/dashboard', config),
-                    axios.get(`http://localhost:5001/api/attendance/${user._id}`, config),
-                    axios.get('http://localhost:5001/api/routines', config)
+                    axios.get('https://mvp-gilt-iota.vercel.app/api/student/dashboard', config),
+                    axios.get(`https://mvp-gilt-iota.vercel.app/api/attendance/${user._id}`, config),
+                    axios.get('https://mvp-gilt-iota.vercel.app/api/routines', config)
                 ]);
 
                 setDashboardData(dashRes.data);

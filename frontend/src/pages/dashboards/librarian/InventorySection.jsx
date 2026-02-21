@@ -18,7 +18,7 @@ const InventorySection = () => {
     const fetchBooks = async () => {
         try {
             const token = localStorage.getItem('token');
-            const res = await axios.get('http://localhost:5001/api/admin/library', {
+            const res = await axios.get('https://mvp-gilt-iota.vercel.app/api/admin/library', {
                 headers: { Authorization: `Bearer ${token}` }
             });
             setBooks(res.data);
@@ -31,7 +31,7 @@ const InventorySection = () => {
         e.preventDefault();
         try {
             const token = localStorage.getItem('token');
-            await axios.post('http://localhost:5001/api/admin/library',
+            await axios.post('https://mvp-gilt-iota.vercel.app/api/admin/library',
                 { title, author, isbn, totalCopies: copies },
                 { headers: { Authorization: `Bearer ${token}` } }
             );

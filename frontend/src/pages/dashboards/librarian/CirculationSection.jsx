@@ -21,7 +21,7 @@ const CirculationSection = () => {
     const fetchTransactions = async () => {
         try {
             const token = localStorage.getItem('token');
-            const res = await axios.get('http://localhost:5001/api/admin/library/transactions', {
+            const res = await axios.get('https://mvp-gilt-iota.vercel.app/api/admin/library/transactions', {
                 headers: { Authorization: `Bearer ${token}` }
             });
             setTransactions(res.data);
@@ -34,7 +34,7 @@ const CirculationSection = () => {
         e.preventDefault();
         try {
             const token = localStorage.getItem('token');
-            await axios.post('http://localhost:5001/api/admin/library/issue',
+            await axios.post('https://mvp-gilt-iota.vercel.app/api/admin/library/issue',
                 { bookId, userId, dueDate },
                 { headers: { Authorization: `Bearer ${token}` } }
             );
@@ -50,7 +50,7 @@ const CirculationSection = () => {
         e.preventDefault();
         try {
             const token = localStorage.getItem('token');
-            await axios.post('http://localhost:5001/api/admin/library/return',
+            await axios.post('https://mvp-gilt-iota.vercel.app/api/admin/library/return',
                 { transactionId },
                 { headers: { Authorization: `Bearer ${token}` } }
             );
